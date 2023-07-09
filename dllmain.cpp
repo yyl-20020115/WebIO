@@ -36,6 +36,48 @@ BOOL APIENTRY DllMain( HMODULE hModule,
 		hL = LoadLibrary(systemPath);
 		if (0 == hL) return FALSE;
 
+#if 1
+		p[0] = GetProcAddress(hL, (LPCSTR)1);
+		p[1] = GetProcAddress(hL, (LPCSTR)4);
+		p[2] = GetProcAddress(hL, (LPCSTR)5);
+		p[3] = GetProcAddress(hL, (LPCSTR)8);
+		p[4] = GetProcAddress(hL, (LPCSTR)9);
+		p[5] = GetProcAddress(hL, (LPCSTR)10);
+		p[6] = GetProcAddress(hL, (LPCSTR)11);
+		p[7] = GetProcAddress(hL, (LPCSTR)14);
+		p[8] = GetProcAddress(hL, (LPCSTR)15);
+		p[9] = GetProcAddress(hL, (LPCSTR)17);
+		p[10] = GetProcAddress(hL, (LPCSTR)18);
+		p[11] = GetProcAddress(hL, (LPCSTR)19);
+		p[12] = GetProcAddress(hL, (LPCSTR)20);
+		p[13] = GetProcAddress(hL, (LPCSTR)21);
+		p[14] = GetProcAddress(hL, (LPCSTR)22);
+		p[15] = GetProcAddress(hL, (LPCSTR)23);
+		p[16] = GetProcAddress(hL, (LPCSTR)24);
+		p[17] = GetProcAddress(hL, (LPCSTR)25);
+		p[18] = GetProcAddress(hL, (LPCSTR)26);
+		p[19] = GetProcAddress(hL, (LPCSTR)27);
+		p[20] = GetProcAddress(hL, (LPCSTR)28);
+		p[21] = GetProcAddress(hL, (LPCSTR)29);
+		p[22] = GetProcAddress(hL, (LPCSTR)31);
+		p[23] = GetProcAddress(hL, (LPCSTR)32);
+		p[24] = GetProcAddress(hL, (LPCSTR)33);
+		p[25] = GetProcAddress(hL, (LPCSTR)35);
+		p[26] = GetProcAddress(hL, (LPCSTR)36);
+		p[27] = GetProcAddress(hL, (LPCSTR)37);
+		p[28] = GetProcAddress(hL, (LPCSTR)38);
+		p[29] = GetProcAddress(hL, (LPCSTR)39);
+		p[30] = GetProcAddress(hL, (LPCSTR)40);
+		p[31] = GetProcAddress(hL, (LPCSTR)41);
+		p[32] = GetProcAddress(hL, (LPCSTR)42);
+		p[33] = GetProcAddress(hL, (LPCSTR)43);
+		p[34] = GetProcAddress(hL, (LPCSTR)44);
+		p[35] = GetProcAddress(hL, (LPCSTR)45);
+		p[36] = GetProcAddress(hL, (LPCSTR)46);
+		p[37] = GetProcAddress(hL, (LPCSTR)47);
+		p[38] = GetProcAddress(hL, (LPCSTR)48);
+		p[39] = GetProcAddress(hL, (LPCSTR)49);
+#else
 		p[0] = GetProcAddress(hL, "WebCancelHttpRequest");
 		p[1] = GetProcAddress(hL, "WebCloseHttpRequest");
 		p[2] = GetProcAddress(hL, "WebCloseSession");
@@ -76,7 +118,8 @@ BOOL APIENTRY DllMain( HMODULE hModule,
 		p[37] = GetProcAddress(hL, "WebSetResolverCacheProperties");
 		p[38] = GetProcAddress(hL, "WebQueryConnectionGroup");
 		p[39] = GetProcAddress(hL, "WebQueryConnectionGroupForRequest");
-    }
+#endif
+	}
     case DLL_THREAD_ATTACH:
 	
 		break;
